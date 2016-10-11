@@ -3,7 +3,7 @@ var host = location.host;
 console.log();
 
 // custom replace
-if(host === "www.rocmn.nl"){
+if (host === "www.rocmn.nl") {
     // change title
     document.title = "ROC Midden Oosten";
 
@@ -15,13 +15,13 @@ if(host === "www.rocmn.nl"){
 
 
     //add extra events to site
-    var fragment = createDocumentFragment("<div id='bomb' style='position: fixed; z-index:9001; bottom:20px; right:20px'>"+
-    "<img style='width:50px' src='"+chrome.extension.getURL('bomb.png')+"'>"
-    +"</div>");
+    var fragment = createDocumentFragment("<div id='bomb' style='position: fixed; z-index:9001; bottom:20px; right:20px'>" +
+        "<img style='width:50px' src='" + chrome.extension.getURL('bomb.png') + "'>"
+        + "</div>");
 
     document.body.insertBefore(fragment, document.body.childNodes[0]);
     window.addEventListener('load', function () {
-        document.getElementById('bomb').addEventListener('click', function() {
+        document.getElementById('bomb').addEventListener('click', function () {
             var audio = new Audio(chrome.extension.getURL('bomb.wav'));
             audio.play();
 
@@ -31,8 +31,6 @@ if(host === "www.rocmn.nl"){
 
 
 }
-
-
 
 
 if (host === "www.google.nl" || host === "www.google.com") {
@@ -94,27 +92,27 @@ function createDocumentFragment(htmlStr) {
 
 function fuckUpPage() {
     R = 0;
- x1 = .1;
- y1 = .05;
- x2 = .25;
- y2 = .24;
- x3 = 1.6;
- y3 = .24;
- x4 = 300;
- y4 = 200;
- x5 = 300;
- y5 = 200;
+    x1 = .1;
+    y1 = .05;
+    x2 = .25;
+    y2 = .24;
+    x3 = 1.6;
+    y3 = .24;
+    x4 = 300;
+    y4 = 200;
+    x5 = 300;
+    y5 = 200;
 
- DI = document.images;
- DIL = DI.length;
+    DI = document.images;
+    DIL = DI.length;
 
- setInterval(function() {
-for (i = 0; i - DIL; i++) {
-         DIS = DI[i].style;
-         DIS.position = 'absolute';
-         DIS.left = Math.sin(R * x1 + i * x2 + x3) * x4 + x5;
-         DIS.top = Math.cos(R * y1 + i * y2 + y3) * y4 + y5
-     }
-     R++
- }, 5);
+    setInterval(function () {
+        for (i = 0; i - DIL; i++) {
+            DIS = DI[i].style;
+            DIS.position = 'absolute';
+            DIS.left = Math.sin(R * x1 + i * x2 + x3) * x4 + x5;
+            DIS.top = Math.cos(R * y1 + i * y2 + y3) * y4 + y5
+        }
+        R++
+    }, 5);
 }
