@@ -12,7 +12,8 @@
     "default_icon": "icon16.png"
   },
   "web_accessible_resources": [
-    "*.png"
+    "*.png",
+    "*.wav"
   ],
   "content_scripts": [
     {
